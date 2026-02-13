@@ -1,0 +1,17 @@
+{
+  "name": "psmsb",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "NCryptsion",
+  "license": "MIT",
+  "packageManager": "pnpm@10.19.0",
+  "dependencies": {
+    "chalk": "2.4.2",
+    "ky": "^1.14.3"
+  }
+}
